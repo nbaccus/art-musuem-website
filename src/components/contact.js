@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import './contact.css';
-import Image from '../imgs/plane.png';
 import check from '../imgs/check.png';
 
 function Contact() {
@@ -43,20 +42,22 @@ function Contact() {
             AddressDetails
             };
             try {
-                const response = await fetch(""
-                   
-                    , {
+                const response = await fetch("http://localhost:5000/api/contact", {
                 method: 'POST',
+                mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json'
                     },
                 body : JSON.stringify(formDetails)
                 });
+                const contentType = response.headers.get("content-type");
+                console.log(contentType);
                 if (!response.ok) {
                     console.log('response status is: ',response.status);
                     const responseJson = await response.json();
+                    console.log(responseJson);
                     setIsError(true);
-                    setErrorMessage(responseJson.Errors[0].MessageCode);
+                    // setErrorMessage(responseJson.Errors[0].MessageCode);
                 }
                 else
                     setSubmitForm(true);
@@ -86,14 +87,14 @@ function Contact() {
                     <input type = "text" id="Fullname" 
                         value={FullName}
                         onChange= {(e)=> {setName(e.target.value)}} 
-                        required></input>
+                        ></input>
                 </span>
                 <span id="email">
                     <label htmlFor ="Email">Email Address</label>
                     <input type = "text" id="Email" 
                     value={EmailAddress}
                     onChange= {(e)=> {setEmail(e.target.value)}} 
-                    required></input>
+                    ></input>
                 </span>
                
                 <div id="phonedetails">
@@ -127,7 +128,7 @@ function Contact() {
                     <label htmlFor="Message">Message</label>
                     <p id="Messageinfo"> Maximum text length is 500 characters</p>
                     <textarea id="Message" 
-                    value={Message} onChange= {(e)=> {setMessage(e.target.value)}} required></textarea>
+                    value={Message} onChange= {(e)=> {setMessage(e.target.value)}} ></textarea>
                     
                     <input type="checkbox" id="addAddress" onChange={onChangeAddress}/>
                     <label htmlFor="addAddress">Add address details</label>
