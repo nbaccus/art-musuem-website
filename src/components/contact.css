@@ -1,0 +1,188 @@
+.contact-us {
+    width: 1200px;
+    height:auto;
+    min-height:900px;
+    text-align: left;
+    margin: auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;     
+   
+}
+.Contact-container {
+    display:block;
+    height:auto;
+    
+}
+
+p{
+    font-size:14px;
+}
+
+.image-container {
+
+    overflow:hidden;
+    background-image: url('../imgs/pexels-laura-tancredi-7078461.jpg');
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: 20px 40px;
+ 
+    clear:left;
+    display:block;
+}
+
+
+.contact-form {
+    display:inline-block;
+    height:auto;
+}
+#phonedetails {
+    clear:both;
+}
+
+.Checkmark-container{
+    display:block;
+    height:40%;
+}
+.Checkmark {
+    margin:auto;
+}
+
+.Form-sent {
+    background-color: rgb(233, 244, 219);
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5%;
+    width:100%;
+    height:200px;
+}
+
+.Form-sent>h2 { 
+    font-size:18px;
+    align-self:center;
+    margin:0;   
+}
+
+.Form-sent>p {
+    font-size: 12px;
+    align-self: center;
+    margin:0;
+}
+
+.Submit, .addPhone {
+    display: inline-block;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+    border:none;
+    background-color: rgb(148, 56, 56);
+    height: 40px;
+    width:100%;
+    border-radius: 4px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    cursor:pointer;
+    
+}
+
+.addPhone {
+    background-color: rgb(255, 245, 245);
+    color: rgb(148, 56, 56);
+}
+
+.addAddress {
+    margin: 20px;
+  
+}
+
+input[type=text], #Message {
+    display:block;
+    background-color: rgb(248,249,252);
+    border: 1px solid rgb(230,230,230);
+    border-radius: 4px;
+    height: 40px;
+    width:100%;
+    font-size: 15px;
+    
+}
+label {
+    font-size:15px;
+}
+
+#Message { 
+    height: 150px;
+    display:inline-block;
+    resize: none;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+label[for="Message"]{
+    float:left;
+    display:inline;
+}
+label[for="Phonenum1"]{
+    clear:both;
+    display:inline;
+}
+
+#Messageinfo {
+    font-size:15px;
+    float:right;
+    color:rgb(155, 155, 155);
+    margin:0;
+}
+
+
+#fullname, #Addressline1details,#Addressdetails2-1 ,
+#Addressdetails-citytown, #Addressdetails-postcode   {
+    width:45%;
+    float:left;
+    
+}
+#email, #Addressline2details,#Addressdetails2-2,
+#Addressdetails-statecounty, #Addressdetails-country {
+    float:right;
+    margin:auto;
+    width:45%;
+  
+}
+
+.FormError {
+    clear:both;
+    display:block;
+}
+
+
+@media screen and (max-width:500px) {
+    .contact-us{
+        width:auto;
+        display:block;
+    }
+    .contact-wrapper {
+        width:90%;
+        margin:auto;
+    }
+    .contact-wrapper>h1{
+        font-size:25px;
+    }
+    .contact-wrapper>p{
+        font-size:12px;
+    }
+    #Messageinfo{
+        font-size:12px;
+    }
+    .image-container{
+        display:none;
+    }
+    #fullname, #email, #Addressline1details,#Addressline2details,
+    #Addressdetails2-1 , #Addressdetails2-2{
+        display:block;
+        width:100%;
+
+    }
+    .Submit {
+        margin-top:5vw;
+        margin-bottom:10vw;
+    }
+}

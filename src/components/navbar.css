@@ -1,0 +1,115 @@
+.navbar-container {
+    /* container for border */
+  
+
+    border-bottom: 1px solid rgba(224, 224, 224,0.4);
+    height: 60px;
+    background-color: rgb(116, 35, 35);
+}
+
+.navbar {
+    /* container for nav links and log in button */
+    align-self: self-end;
+    margin: auto;
+    display: grid;
+    grid-template-columns:2fr 1fr;
+
+}
+
+.navbar-wrapper {
+    /* container for logo and (links and log in)  */
+    clear:both;
+    /* padding-top:0.5em; */
+    margin:auto;
+    width:  1200px;
+    display:grid;
+    grid-template-columns: 50% 50%;
+    
+
+}
+#logo {
+    
+    color:white;
+    font-size: 30px;
+
+    align-self: start;
+    text-align: left;
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:0;
+    display:block;
+}
+/* .Logo {
+    height: 30px;
+    align-self: start;
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:0;
+    display:block;
+  
+  } */
+
+ul {
+    
+    display:grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
+
+    list-style-type: none; 
+     text-align: center;
+    margin: 10px;
+    justify-content: end; 
+
+
+  
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+
+
+.navbar > button {
+    
+    
+    display: inline-block;
+    /* margin: auto; */
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    border:none;
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
+    height: 40px;
+    width:130px;
+    border-radius: 4px;
+    cursor:pointer;
+    background-color: rgb(148, 56, 56);
+    color: white;
+    
+    /* float:right; */
+}
+
+.navbar>button:hover{
+    background-color:rgba(255, 255, 255, 0.2);
+}
+
+@media only screen and (max-width:500px) {
+    .navbar {
+        display:none;
+    }
+    .Logo{
+        margin:auto;
+        margin-top:0.5em;
+        
+    }
+    .navbar-wrapper {
+        width:100%;
+        display:inline-block;
+    }
+
+}

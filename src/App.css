@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 2;
+  overflow:auto;
+}
+
+.Content{
+  overflow:auto;
+ position :relative;
+ height:auto;
+}
+
+html{
+  /* overflow:auto; */
+  
+  overflow-y: scroll;
+  overflow-x:scroll;
+  background:white;
+}
+
+
+body { 
+/* width:100%; */
+background:white;
+height:100%;
+/* width:1500px; */
+width:100%;
+margin:auto;
+overflow:auto;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+@media  screen and (max-width:500px) {
+  body{
+
+    width:100%;
+  }
+  html {
+    width:100%;
+  }
+}

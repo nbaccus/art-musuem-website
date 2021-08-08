@@ -1,0 +1,40 @@
+.about-us {
+    width: 1200px;
+
+    height:100%;
+    text-align: left;
+    margin: auto;
+    font-smooth: auto;
+    margin-bottom:50px;
+    
+}
+
+p{
+    font-size: 14px;
+}
+.image {
+    display:block;
+    margin:auto;
+    padding:10px;
+    height: 400px;
+}
+.about-list{
+    list-style-type: disc;
+    display: inline-block;
+    text-align: left;
+    margin:auto;
+    list-style-position:inside;
+    padding-left:0;
+}
+.about-list>li {
+    list-style-position:inside;
+    margin:0;
+    padding:0;
+    font-size: 14px;
+    font-weight: bold;
+    
+}
+.about-us > h2 {
+    font-weight: bold;
+    font-size:16px;
+}
