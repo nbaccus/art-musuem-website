@@ -52,6 +52,7 @@ function Contact() {
                 });
                 const contentType = response.headers.get("content-type");
                 console.log(contentType);
+                console.log(response.json());
                 if (!response.ok) {
                     console.log('response status is: ',response.status);
                     const responseJson = await response.json();
