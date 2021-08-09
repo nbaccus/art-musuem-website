@@ -50,18 +50,20 @@ function Contact() {
                     },
                 body : JSON.stringify(formDetails)
                 });
-                const contentType = response.headers.get("content-type");
-                console.log(contentType);
-                console.log(response.json());
+               
                 if (!response.ok) {
                     console.log('response status is: ',response.status);
                     const responseJson = await response.json();
-                    console.log(responseJson);
                     setIsError(true);
-                    // setErrorMessage(responseJson.Errors[0].MessageCode);
+                    setErrorMessage(responseJson.Errors.Message);
                 }
                 else
+                {
+                    // const responseJson = await response.json();
+                    // console.log(responseJson);
+              
                     setSubmitForm(true);
+                }
             }
             catch(e) {
                 console.log(e);
