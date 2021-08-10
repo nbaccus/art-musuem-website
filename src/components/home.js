@@ -20,13 +20,7 @@ function Home() {
     const [isLoading, setIsLoading] = useState(true);
    
     useEffect(() => {
-        console.log("is loading before is ",isLoading);
-        setTimeout(()=> {
-            getCarouselData();
-            
-        },5000)
-        // getCarouselData();
-        
+        getCarouselData();  
     }, []);
 
     const getCarouselData = async () => {
@@ -38,27 +32,18 @@ function Home() {
         fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/467594')]);
 
        try { 
-            
-           console.log(test);
             for (let i =0 ; i<test.length; i++)
             {
                 test[i] = await test[i].json();
             }
-            console.log("test  is :" + test[0].objectID);
             setDetails(test);
             setIsLoading(false);
-            console.log("is loading right after fetch is ",isLoading);
-            console.log(details);
             } 
         catch(error) {
             setIsLoading(false);
             console.log(error)
         }
-        finally {
-            console.log("is loading after is ",isLoading);
-        }
-    
-        };
+    };
     return (
         <div className="Home">
             <title>Home</title>
@@ -68,10 +53,11 @@ function Home() {
                 pagination={{  
                 "dynamicBullets": true,
                 clickable: true }}>
-                 
+                {isLoading ? <div className= "Loading"><h1>Loading...</h1></div> : 
+                    <div>
                         {details.map ((item, index)=> (
                         <SwiperSlide>
-                        {isLoading ? <div><h1>Loading...</h1></div> : 
+                       
                         <div className="Swiper-image" style={ {backgroundImage: 
                         `linear-gradient(to right, rgba(255,255,255,0.4) 20%, rgba(255,255,255,0) 60%),url(${item.primaryImage})`,  
                         backgroundSize: '2000px', backgroundRepeat: 'no-repeat',
@@ -89,12 +75,11 @@ function Home() {
                                 </div>
                             </div>
                         </div>
-                        }
-                        </SwiperSlide>  
-                                         
-                        ))}         
-                                        
+                        </SwiperSlide>                 
+                        ))}        
+                    </div>}            
             </Swiper>
+            
             <div className = "Home-content1">
             <img src={Image} className="Image" alt="office"/>
                 <div className="Text-content">
@@ -106,7 +91,9 @@ function Home() {
                         <li> Maecenas consequat enim sed erat laoreet accumsan.</li>
                         <li>  Donec ultrices diam eget justo elementum congue.</li>
                     </ul>
+                    <Link to="/about-us">
                     <button id="Learnmore">Learn more</button>
+                    </Link>
                 </div>
                 
             </div>

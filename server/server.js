@@ -59,6 +59,7 @@ app.post('/api/contact', (req, res) => {
         AddressDetails: req.body.AddressDetails
     };
     contacts.push(contactForm);
+    res.send(validation);
     
     
 

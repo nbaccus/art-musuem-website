@@ -102,9 +102,11 @@ a {
     .navbar {
         display:none;
     }
-    .Logo{
-        margin:auto;
-        margin-top:0.5em;
+    #logo{
+        margin-top:auto;
+        margin-right:auto;
+        margin-left:auto;
+        text-align:center;
         
     }
     .navbar-wrapper {
