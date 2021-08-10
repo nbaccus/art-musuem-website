@@ -9,6 +9,12 @@
     margin:auto;
     border-top: 1px solid rgb(224, 224, 224);
 }
+#the-met {
+    color: rgb(155, 155, 155);
+    letter-spacing: inherit;
+    font-size:14px;
+    text-decoration: underline;
+}
 
 @media  screen and (max-width:500px) {
     .footer{
